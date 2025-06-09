@@ -1,0 +1,12 @@
+.box {
+    background-color: #e1e1e1;
+    padding: 20px;
+    border: 2px solid #333;
+}
+
+.box > .content {
+    background-color: #b1b1b1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #222;
+}
