@@ -1,4 +1,5 @@
 import { Icon } from "./UIKit/Elements/Icon"
+import { Header, Text } from "./UIKit/Elements/Typography"
 import { Flex, FlexCol } from "./UIKit/Layouts/Flex"
 
 
@@ -10,7 +11,8 @@ export const App = () => {
     return (
         <div className="flex flex-col gap-2 w-fit">
             <h1>Hello World</h1>
-
+            <Header>my header</Header>
+            <Text size={30}>my text</Text>
             <Flex>
                 <Icon i="home" />
                 <Icon i="search" />
