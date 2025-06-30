@@ -1,0 +1,15 @@
+.btn {
+    background-color: cyan;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+   background-color: rgb(0, 215, 215);
+}
+
+.btn:active {
+   background-color: rgb(0, 221, 221);
+}
