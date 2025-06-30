@@ -1,0 +1,9 @@
+.cube {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.cube.green {
+    background-color: green;
+}
