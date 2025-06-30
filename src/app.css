@@ -1,0 +1,23 @@
+.app > .header {
+    background-color: gray;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.app > .header a {
+    color: white;
+    text-decoration: none;
+}
+
+.app > .header a:hover {
+ color: #e1e1e1;
+}
+
+.app > .header a.active {
+ color: blue;
+}
+
+.app > .content {
+    padding: 20px;
+}
