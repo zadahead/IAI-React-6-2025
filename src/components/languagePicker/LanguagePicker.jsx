@@ -1,5 +1,12 @@
 import { useState } from "react"
 
+const options = {
+    "": "--pick a language--",
+    hebrew: "Hebrew",
+    english: "English",
+    french: "French"
+}
+
 export const LanguagePicker = () => {
     const [selected, setSelected] = useState("hebrew");
 
@@ -7,14 +14,17 @@ export const LanguagePicker = () => {
         setSelected(e.target.value);
     }
 
+    const value = selected ? options[selected] : "Pick a lang";
+
     return (
         <div>
-            <h3>{selected}</h3>
+            <h3>{value}</h3>
             <select value={selected} onChange={handleChange}>
-                <option value="">--pick a language--</option>
-                <option value="hebrew">Hebrew</option>
-                <option value="english">English</option>
-                <option value="french">French</option>
+                {
+                    Object.entries(options).map(([key, value]) => (
+                        <option value={key}>{value}</option>
+                    ))
+                }
             </select>
         </div>
     )
