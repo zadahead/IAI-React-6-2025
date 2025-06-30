@@ -1,8 +1,6 @@
 import { Btn } from "../../UIKit/Elements/btn/Btn"
 
 export const Counter = ({ value, setValue }) => {
-
-
     const handleAdd = () => {
         setValue(value + 1);
     }
