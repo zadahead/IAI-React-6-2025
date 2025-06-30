@@ -14,6 +14,7 @@ export const LanguagePicker = () => {
         setSelected(e.target.value);
     }
 
+
     const value = selected ? options[selected] : "Pick a lang";
 
     return (
@@ -21,8 +22,8 @@ export const LanguagePicker = () => {
             <h3>{value}</h3>
             <select value={selected} onChange={handleChange}>
                 {
-                    Object.entries(options).map(([key, value]) => (
-                        <option value={key}>{value}</option>
+                    Object.entries(options).map(([key, value], index) => (
+                        <option key={index} value={key}>{value}</option>
                     ))
                 }
             </select>
