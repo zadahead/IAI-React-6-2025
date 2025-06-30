@@ -1,8 +1,7 @@
-import { useState } from "react"
 import { Btn } from "../../UIKit/Elements/btn/Btn"
 
-export const Counter = () => {
-    const [value, setValue] = useState(10);
+export const Counter = ({ value, setValue }) => {
+
 
     const handleAdd = () => {
         setValue(value + 1);
