@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 export const FetchPage = () => {
     const [isLoading, setIsLoading] = useState(true);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         fetchData();
@@ -10,17 +11,19 @@ export const FetchPage = () => {
 
     const fetchData = async () => {
         const response = await axios.get("https://jsonplaceholder.typicode.com/users")
-        console.log(response.data);
+        setUsers(response.data);
         setIsLoading(false);
     }
 
+    if (isLoading) {
+        return <h2>loading...</h2>
+    }
+
     return (
-        <div>
-            {
-                isLoading ?
-                    <h2>loading...</h2> :
-                    <h2>fetch page</h2>
-            }
-        </div>
+        <ul>
+            {users.map(({ id, name, email }) => (
+                <li key={id}>{`#${id}) ${name} - ${email}`}</li>
+            ))}
+        </ul>
     )
 }
