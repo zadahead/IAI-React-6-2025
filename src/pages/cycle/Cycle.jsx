@@ -12,21 +12,35 @@ export const Cycle = () => {
 
         document.body.addEventListener("click", handleClick);
 
-        return () => {
+        return () => { //unmount - cleanup
             document.body.removeEventListener("click", handleClick);
         }
     }, []) //trigger on component mount
 
 
     useEffect(() => {
-        console.log("count has changed");
-    }, [count])
+        console.log("useEffect count", count);
+
+        return () => { //before dependency change
+            console.log("before count change", count);
+        }
+    }, [count]) //with a dependency
+
+
+    useEffect(() => {
+        console.log("every update");
+    }) //on every update (use wisely)
+
+
+    const handleAdd = () => {
+        setCount(count + 1);
+    }
 
 
     return (
         <div>
             <h2>Count, {count}</h2>
-            <Btn onClick={() => setCount(count + 1)}>Add</Btn>
+            <Btn onClick={handleAdd}>Add</Btn>
         </div>
     )
 }
