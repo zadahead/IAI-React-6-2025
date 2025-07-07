@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export const FetchPage = () => {
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetchData();
@@ -10,11 +11,16 @@ export const FetchPage = () => {
     const fetchData = async () => {
         const response = await axios.get("https://jsonplaceholder.typicode.com/users")
         console.log(response.data);
+        setIsLoading(false);
     }
 
     return (
         <div>
-            <h2>fetch page</h2>
+            {
+                isLoading ?
+                    <h2>loading...</h2> :
+                    <h2>fetch page</h2>
+            }
         </div>
     )
 }
