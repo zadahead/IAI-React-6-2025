@@ -6,11 +6,13 @@ import { ListPage } from "./pages/list/List";
 import { Todos } from "./pages/todos/Todos";
 import { Cycle } from "./pages/cycle/Cycle";
 import { FetchPage } from "./pages/fetch/FetchPage";
+import { LoginPage, LoginPageUncontrolled } from "./pages/login/LoginPage";
 
 export const App = () => {
     return (
         <div className="app">
             <div className="header">
+                <NavLink to="/login">Login</NavLink>
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/list">List</NavLink>
@@ -20,6 +22,7 @@ export const App = () => {
             </div>
             <div className="content">
                 <Routes>
+                    <Route path="/login" element={<LoginPageUncontrolled />}></Route>
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/about" element={<About />}></Route>
                     <Route path="/list" element={<ListPage />}></Route>
