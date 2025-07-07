@@ -5,6 +5,7 @@ import './app.css';
 import { ListPage } from "./pages/list/List";
 import { Todos } from "./pages/todos/Todos";
 import { Cycle } from "./pages/cycle/Cycle";
+import { FetchPage } from "./pages/fetch/FetchPage";
 
 export const App = () => {
     return (
@@ -15,6 +16,7 @@ export const App = () => {
                 <NavLink to="/list">List</NavLink>
                 <NavLink to="/todos">Todos</NavLink>
                 <NavLink to="/cycle">Cycle</NavLink>
+                <NavLink to="/fetch">Fetch</NavLink>
             </div>
             <div className="content">
                 <Routes>
@@ -23,6 +25,7 @@ export const App = () => {
                     <Route path="/list" element={<ListPage />}></Route>
                     <Route path="/todos" element={<Todos />}></Route>
                     <Route path="/cycle" element={<Cycle />}></Route>
+                    <Route path="/fetch" element={<FetchPage />}></Route>
                     <Route path="*" element={<Navigate to="/" />}></Route>
                 </Routes>
             </div>
