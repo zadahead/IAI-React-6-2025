@@ -1,0 +1,49 @@
+.dropdown {
+    max-width: 200px;
+    position: relative;
+}
+
+.dropdown .trigger {
+    border: 1px solid #aaa;
+    background-color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.dropdown .trigger:hover {
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+.dropdown .trigger:active {
+    background-color: #aaa;
+}
+
+.dropdown .selected_value {
+    font-weight: bold;
+}
+
+
+.dropdown .list {
+    border: 1px solid #aaa;
+    margin: 0;
+    padding-left: 0;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.dropdown .list .list_item {
+    display: flex;
+    margin: 0;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.dropdown .list .list_item:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
