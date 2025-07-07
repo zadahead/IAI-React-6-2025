@@ -1,29 +1,32 @@
 import { useEffect, useState } from "react";
+import { Btn } from "../../UIKit/Elements/btn/Btn";
 
 export const Cycle = () => {
     const [count, setCount] = useState(0);
-    const [isLoading, setIsLoading] = useState(true);
-
-    console.log("Cycle");
 
     useEffect(() => {
-        console.log("mounted");
-        setTimeout(() => {
-            setIsLoading(false);
-            setCount(count + 1)
-        }, 3000);
+        console.log("component mounted");
+        const handleClick = () => {
+            //console.log("click")
+        }
+
+        document.body.addEventListener("click", handleClick);
+
+        return () => {
+            document.body.removeEventListener("click", handleClick);
+        }
     }, []) //trigger on component mount
 
-    console.log("before rendering");
+
+    useEffect(() => {
+        console.log("count has changed");
+    }, [count])
+
 
     return (
         <div>
             <h2>Count, {count}</h2>
-            {
-                isLoading ?
-                    <h2>loading...</h2> :
-                    <h2>Cycle of a component</h2>
-            }
+            <Btn onClick={() => setCount(count + 1)}>Add</Btn>
         </div>
     )
 }
