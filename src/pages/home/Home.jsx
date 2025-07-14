@@ -3,6 +3,7 @@ import { ColorSwitcherHook } from "../../components/colorSwitcherHook.jsx/ColorS
 import { Counter } from "../../components/counter/Counter";
 import { CounterHook } from "../../components/counterHook/CounterHook";
 import { LanguagePicker } from "../../components/languagePicker/LanguagePicker";
+import { WindowSize } from "../../components/windowSize/WindowSize";
 
 
 export const Home = () => {
@@ -10,7 +11,9 @@ export const Home = () => {
     return (
         <div>
             <h2>This is our homepage</h2>
-            <ColorSwitcherHook />
+            <div className="p-4">
+                <WindowSize />
+            </div>
         </div>
     )
 }
