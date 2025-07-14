@@ -16,6 +16,7 @@ import { ThemeContext } from "./context/themeContext";
 import { ThemSwitcher } from "./components/themSwitcher/ThemSwitcher";
 import { useSelector, useDispatch } from "react-redux";
 import { handleSwitch } from "./store/slices/colorSwitcherSlice";
+import { Parent } from "./components/callbackMemo/Parent";
 
 export const App = () => {
 
@@ -32,6 +33,7 @@ export const App = () => {
             <div className="header">
                 {/* <NavLink to="/login">Login</NavLink>
                 <NavLink to="/about">About</NavLink> */}
+                <NavLink to="/callback">Callback</NavLink>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/list">List</NavLink>
                 <NavLink to="/todos">Todos</NavLink>
@@ -45,6 +47,7 @@ export const App = () => {
                 <Routes>
                     <Route path="/login" element={<LoginPageUncontrolled />}></Route>
                     <Route path="/" element={<Home />}></Route>
+                    <Route path="/callback" element={<Parent />}></Route>
                     <Route path="/about" element={<About />}></Route>
                     <Route path="/list" element={<ListPage />}></Route>
                     <Route path="/todos" element={<Todos />}></Route>
@@ -54,7 +57,7 @@ export const App = () => {
                     <Route path="*" element={<Navigate to="/" />}></Route>
                 </Routes>
             </div>
-            <ThemSwitcher />
+            {/* <ThemSwitcher /> */}
         </div>
     )
 }
