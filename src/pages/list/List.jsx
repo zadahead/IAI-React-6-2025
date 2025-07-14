@@ -1,3 +1,5 @@
+import { CounterAdd } from "../../components/counterContext/CounterAdd"
+
 export const ListPage = () => {
     const list = [
         "Mosh",

@@ -8,8 +8,12 @@ import { Cycle } from "./pages/cycle/Cycle";
 import { FetchPage } from "./pages/fetch/FetchPage";
 import { LoginPage, LoginPageUncontrolled } from "./pages/login/LoginPage";
 import { DropdownPage } from "./pages/dropdown/DropdownPage";
+import { useContext } from "react";
+import { CounterContext } from "./context/counterContext";
 
 export const App = () => {
+    const { count } = useContext(CounterContext);
+
     return (
         <div className="app">
             <div className="header">
@@ -21,6 +25,7 @@ export const App = () => {
                 <NavLink to="/cycle">Cycle</NavLink>
                 <NavLink to="/fetch">Fetch</NavLink>
                 <NavLink to="/dropdown">Dropdown</NavLink>
+                <h4>Count, {count}</h4>
             </div>
             <div className="content">
                 <Routes>
