@@ -1,6 +1,7 @@
 import { ColorSwitcher } from "../../components/colorSwitcher/ColorSwitcher";
 import { ColorSwitcherBox } from "../../components/colorSwitcherContext/ColorSwitchBox";
 import { ColorSwitcherHook } from "../../components/colorSwitcherHook.jsx/ColorSwitcherHook";
+import { ColorSwitcherRedux } from "../../components/colorSwitchRedux/ColorSwitcherRedux";
 import { Counter } from "../../components/counter/Counter";
 import { CounterAdd } from "../../components/counterContext/CounterAdd";
 import { CounterDisplay } from "../../components/counterContext/CounterDisplay";
@@ -17,7 +18,7 @@ export const Home = () => {
         <div>
             <h2>This is our homepage</h2>
             <div className="p-4">
-                <CounterRedux />
+                <ColorSwitcherRedux />
             </div>
         </div>
     )

@@ -13,6 +13,8 @@ const counterSlice = createSlice({
     name: "counter",
     initialState: {
         value: 10,
+        mosh: "dads",
+        david: "ss"
     },
     reducers: {
         handleAdd: (state) => {

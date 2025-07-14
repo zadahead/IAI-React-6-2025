@@ -14,13 +14,17 @@ import { ColorSwitcherContext } from "./context/colorSwitcherContext";
 import { Btn } from "./UIKit/Elements/btn/Btn";
 import { ThemeContext } from "./context/themeContext";
 import { ThemSwitcher } from "./components/themSwitcher/ThemSwitcher";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { handleSwitch } from "./store/slices/colorSwitcherSlice";
 
 export const App = () => {
-    const { handleSwitch } = useContext(ColorSwitcherContext);
+
     const { mode } = useContext(ThemeContext);
+    const dispatch = useDispatch();
+
 
     const count = useSelector((state) => state.counter.value);
+
     console.log(count);
 
     return (
@@ -35,7 +39,7 @@ export const App = () => {
                 <NavLink to="/fetch">Fetch</NavLink>
                 <NavLink to="/dropdown">Dropdown</NavLink>
                 <h4>Count, {count}</h4>
-                <Btn onClick={handleSwitch}>Switch</Btn>
+                <Btn onClick={() => dispatch(handleSwitch())}>Switch</Btn>
             </div>
             <div className="content">
                 <Routes>
