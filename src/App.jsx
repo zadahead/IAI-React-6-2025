@@ -14,11 +14,14 @@ import { ColorSwitcherContext } from "./context/colorSwitcherContext";
 import { Btn } from "./UIKit/Elements/btn/Btn";
 import { ThemeContext } from "./context/themeContext";
 import { ThemSwitcher } from "./components/themSwitcher/ThemSwitcher";
+import { useSelector } from "react-redux";
 
 export const App = () => {
-    const { count } = useContext(CounterContext);
     const { handleSwitch } = useContext(ColorSwitcherContext);
     const { mode } = useContext(ThemeContext);
+
+    const count = useSelector((state) => state.counter.value);
+    console.log(count);
 
     return (
         <div className={`app ${mode}`}>
