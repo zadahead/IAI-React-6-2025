@@ -1,4 +1,5 @@
 import { ColorSwitcher } from "../../components/colorSwitcher/ColorSwitcher";
+import { ColorSwitcherBox } from "../../components/colorSwitcherContext/ColorSwitchBox";
 import { ColorSwitcherHook } from "../../components/colorSwitcherHook.jsx/ColorSwitcherHook";
 import { Counter } from "../../components/counter/Counter";
 import { CounterAdd } from "../../components/counterContext/CounterAdd";
@@ -15,8 +16,7 @@ export const Home = () => {
         <div>
             <h2>This is our homepage</h2>
             <div className="p-4">
-                <CounterDisplay />
-                <CounterAdd />
+                <ColorSwitcherBox />
             </div>
         </div>
     )

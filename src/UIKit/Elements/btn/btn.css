@@ -1,5 +1,5 @@
 .btn {
-    background-color: cyan;
+    background-color: var(--primary);
     padding: 10px 15px;
     border: none;
     border-radius: 5px;

@@ -4,11 +4,14 @@ import "./assets/fonts/fonts.css";
 import "./core.css";
 import { BrowserRouter } from 'react-router-dom';
 import { CounterProvider } from './context/counterContext';
+import { ColorSwitcherProvider } from './context/colorSwitcherContext';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <CounterProvider>
-      <App />
+      <ColorSwitcherProvider>
+        <App />
+      </ColorSwitcherProvider>
     </CounterProvider>
   </BrowserRouter>
   ,

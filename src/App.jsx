@@ -10,15 +10,18 @@ import { LoginPage, LoginPageUncontrolled } from "./pages/login/LoginPage";
 import { DropdownPage } from "./pages/dropdown/DropdownPage";
 import { useContext } from "react";
 import { CounterContext } from "./context/counterContext";
+import { ColorSwitcherContext } from "./context/colorSwitcherContext";
+import { Btn } from "./UIKit/Elements/btn/Btn";
 
 export const App = () => {
     const { count } = useContext(CounterContext);
+    const { handleSwitch } = useContext(ColorSwitcherContext);
 
     return (
-        <div className="app">
+        <div className="app dark">
             <div className="header">
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/about">About</NavLink>
+                {/* <NavLink to="/login">Login</NavLink>
+                <NavLink to="/about">About</NavLink> */}
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/list">List</NavLink>
                 <NavLink to="/todos">Todos</NavLink>
@@ -26,6 +29,7 @@ export const App = () => {
                 <NavLink to="/fetch">Fetch</NavLink>
                 <NavLink to="/dropdown">Dropdown</NavLink>
                 <h4>Count, {count}</h4>
+                <Btn onClick={handleSwitch}>Switch</Btn>
             </div>
             <div className="content">
                 <Routes>
