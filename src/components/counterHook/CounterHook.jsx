@@ -8,7 +8,7 @@ import { Btn } from "../../UIKit/Elements/btn/Btn"
     2) create a hook function starting with "useXXX" and paste login there
     3) return the values needed for the rendering of the component
     4) call custom hook from component and get the values needed for it to run
-    5) move new custom hook to it own location
+    5) move new custom hook to it own
 */
 
 
