@@ -12,13 +12,16 @@ import { useContext } from "react";
 import { CounterContext } from "./context/counterContext";
 import { ColorSwitcherContext } from "./context/colorSwitcherContext";
 import { Btn } from "./UIKit/Elements/btn/Btn";
+import { ThemeContext } from "./context/themeContext";
+import { ThemSwitcher } from "./components/themSwitcher/ThemSwitcher";
 
 export const App = () => {
     const { count } = useContext(CounterContext);
     const { handleSwitch } = useContext(ColorSwitcherContext);
+    const { mode } = useContext(ThemeContext);
 
     return (
-        <div className="app dark">
+        <div className={`app ${mode}`}>
             <div className="header">
                 {/* <NavLink to="/login">Login</NavLink>
                 <NavLink to="/about">About</NavLink> */}
@@ -44,6 +47,7 @@ export const App = () => {
                     <Route path="*" element={<Navigate to="/" />}></Route>
                 </Routes>
             </div>
+            <ThemSwitcher />
         </div>
     )
 }

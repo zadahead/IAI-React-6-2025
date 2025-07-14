@@ -49,5 +49,5 @@
 }
 
 .dropdown .list .list_item.selected {
-    background-color: cyan;
+    background-color: var(--primary);
 }

@@ -5,14 +5,17 @@ import "./core.css";
 import { BrowserRouter } from 'react-router-dom';
 import { CounterProvider } from './context/counterContext';
 import { ColorSwitcherProvider } from './context/colorSwitcherContext';
+import { ThemeProvider } from './context/themeContext';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <CounterProvider>
-      <ColorSwitcherProvider>
-        <App />
-      </ColorSwitcherProvider>
-    </CounterProvider>
+    <ThemeProvider>
+      <CounterProvider>
+        <ColorSwitcherProvider>
+          <App />
+        </ColorSwitcherProvider>
+      </CounterProvider>
+    </ThemeProvider>
   </BrowserRouter>
   ,
 )

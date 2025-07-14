@@ -3,7 +3,7 @@ import { Icon } from '../Icon';
 import './dropdown.css';
 
 export const Dropdown = ({ list, selected, onChange }) => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const wrapRef = useRef();
 
     useEffect(() => {
